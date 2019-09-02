@@ -10,6 +10,10 @@ categories: [笔记]
 
 <!--more-->
 
+https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
+https://www.cnblogs.com/linxd/p/4955530.html
+
+
 ## 基础语法
 
 ### 公式标记与查看公式
