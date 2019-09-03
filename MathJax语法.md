@@ -84,7 +84,7 @@ omega | $\Omega$ | `\Omega` | $\omega$ | `\omega` |
 
 `\int`用来表示积分符号，同样地，其上下标表示积分的上下限。如`\int_1^\infty`: $\int_1^\infty$。
 
-与此类似的符号还有：`\prod`：$\prod$, `\bigcup`：$\bigcup$, `\bigcap`：$\bigcap$, `\iint`：$\iint$。
+与此类似的符号还有：`\prod`：$\prod$，`\bigcup`：$\bigcup$，`\bigcap`：$\bigcap$，`\iint`：$\iint$。
 
 ### 分式和根式
 
@@ -104,16 +104,28 @@ omega | $\Omega$ | `\Omega` | $\omega$ | `\omega` |
 ### 特殊函数和符号
 
 1. 常见的三角函数，如`\sin x`：$\sin x$，`\arctan_x`：$\arctan_x$，`\lim_{1\to\infty}`：$\lim_{1\to\infty}$。
+
 2. 比较运算符：`\lt`、`\gt`、`\le`、`\ge`、`\neq`：$\lt$ $\gt$ $\le$ $\ge$ $\neq$。可以在这些运算符前面加上`\not`，如`\not\lt`：$\not\lt$。
+
 3. `\times` `\div` `\pm` `\mp`表示：$\times$ $\div$ $\pm$ $\mp$，`\cdot`表示居中的点，`x \cdot y` ：$x \cdot y$
-4. 集合关系与运算：\cup \cap \setminus \subset \subseteq \subsetneq \supset \in \notin \emptyset \varnothing : \cup \cap \setminus \subset \subseteq \subsetneq \supset \in \notin \emptyset \varnothing
+
+4. 集合关系与运算：`\cup` `\cap` `\setminus` `\subset` `\subseteq` `\subsetneq` `\supset` `\in` `\notin` `\emptyset` `\varnothing` ： $\cup$ $\cap$ $\setminus$ $\subset$ $\subseteq$ $\subsetneq$ $\supset$ $\in$ $\notin$ $\emptyset$ $\varnothing$
+
 5. 表示排列使用`\binom{n+1}{2k}`：$\binom{n+1}{2k}$或`{n+1 \choose 2k}`：${n+1 \choose 2k}$
-6. 箭头：`\to` `\rightarrow` `\leftarrow` `\Rightarrow` `\Leftarrow` `\mapsto:\to \rightarrow \leftarrow \Rightarrow \Leftarrow \mapsto
+
+6. 箭头：`\to` `\rightarrow` `\leftarrow` `\Rightarrow` `\Leftarrow` `\mapsto`：$\to$ $\rightarrow$ $\leftarrow$ $\Rightarrow$ $\Leftarrow$ $\mapsto$
+
 7. 逻辑运算符：\land \lor \lnot \forall \exists \top \bot \vdash \vDash：\land \lor \lnot \forall \exists \top \bot \vdash \vDash
+
 8. \star \ast \oplus \circ \bullet : \star \ast \oplus \circ \bullet
+
 9. \approx \sim \cong \equiv \prec : \approx \sim \cong \equiv \prec
+
 10. \infty \aleph_o \nabla \partial \Im \Re : \infty \aleph_o \nabla \partial \Im \Re
+
 11. 模运算 \pmode , 如 a \equiv b \pmod n : a≡b(modn)
+
 12. \ldots与\cdots，其区别是dots的位置不同，ldots位置稍低，cdots位置居中。
 a1+a2+⋯+an,a1,a2,…,an
+
 13. 一些希腊字母具有变体形式，如\epsilon \varepsilon : ϵ ε , \phi \varphi : ϕ φ
