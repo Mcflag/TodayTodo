@@ -115,7 +115,7 @@ omega | $\Omega$ | `\Omega` | $\omega$ | `\omega` |
 
 6. 箭头：`\to` `\rightarrow` `\leftarrow` `\Rightarrow` `\Leftarrow` `\mapsto`：$\to$ $\rightarrow$ $\leftarrow$ $\Rightarrow$ $\Leftarrow$ $\mapsto$
 
-7. 逻辑运算符：\land \lor \lnot \forall \exists \top \bot \vdash \vDash：\land \lor \lnot \forall \exists \top \bot \vdash \vDash
+7. 逻辑运算符：`\land` `\lor` `\lnot` `\forall` `\exists` `\top` `\bot` `\vdash` `\vDash`：$\land$ $\lor$ $\lnot$ $\forall$ $\exists$ $\top$ $\bot$ $\vdash$ $\vDash$
 
 8. \star \ast \oplus \circ \bullet : \star \ast \oplus \circ \bullet
 
