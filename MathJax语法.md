@@ -14,7 +14,7 @@ https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-qu
 https://www.cnblogs.com/linxd/p/4955530.html
 
 
-## 基础语法
+## 1. 基础语法
 
 ### 公式标记与查看公式
 
@@ -115,17 +115,65 @@ omega | $\Omega$ | `\Omega` | $\omega$ | `\omega` |
 
 6. 箭头：`\to` `\rightarrow` `\leftarrow` `\Rightarrow` `\Leftarrow` `\mapsto`：$\to$ $\rightarrow$ $\leftarrow$ $\Rightarrow$ $\Leftarrow$ $\mapsto$
 
-7. 逻辑运算符：\land \lor \lnot \forall \exists \top \bot \vdash \vDash：\land \lor \lnot \forall \exists \top \bot \vdash \vDash
+7. 逻辑运算符：`\land` `\lor` `\lnot` `\forall` `\exists` `\top` `\bot` `\vdash` `\vDash`：$\land$ $\lor$ $\lnot$ $\forall$ $\exists$ $\top$ $\bot$ $\vdash$ $\vDash$
 
-8. \star \ast \oplus \circ \bullet : \star \ast \oplus \circ \bullet
+8. `\star` `\ast` `\oplus` `\circ` `\bullet`：$\star$ $\ast$ $\oplus$ $\circ$ $\bullet$
 
-9. \approx \sim \cong \equiv \prec : \approx \sim \cong \equiv \prec
+9. `\approx` `\sim` `\cong` `\equiv` `\prec`： $\approx$ $\sim$ $\cong$ $\equiv$ $\prec$
 
-10. \infty \aleph_o \nabla \partial \Im \Re : \infty \aleph_o \nabla \partial \Im \Re
+10. `\infty` `\aleph_o` `\nabla` `\partial` `\Im` `\Re`： $\infty$ $\aleph_o$ $\nabla$ $\partial$ $\Im$ $\Re$
 
-11. 模运算 \pmode , 如 a \equiv b \pmod n : a≡b(modn)
+11. 模运算`\pmode`，如 `a \equiv b \pmod n`：$a \equiv b \pmod n$
 
-12. \ldots与\cdots，其区别是dots的位置不同，ldots位置稍低，cdots位置居中。
-a1+a2+⋯+an,a1,a2,…,an
+12. `\ldots`与`\cdots`，其区别是dots的位置不同，ldots位置稍低，cdots位置居中。
+$a1+a2+\cdots+an$，$a1,a2,\ldots,an$
 
-13. 一些希腊字母具有变体形式，如\epsilon \varepsilon : ϵ ε , \phi \varphi : ϕ φ
+13. 一些希腊字母具有变体形式，如`\epsilon` `\varepsilon`：$\epsilon$ $\varepsilon$，`\phi` `\varphi`：$\phi$ $\varphi$，字母`l`的手写体：$\ell$。
+
+### 空间
+通常MathJax通过内部策略自己管理公式内部的空间，因此a...b与a......b(.表示空格)都会显示为ab。可以通过在ab间加入`\,`增加些许间隙，`\;`增加较宽间隙，`\quad`与`\qquad`会增加更大的间隙，如$a \quad b$
+
+### 顶部符号
+对于单字符，`\hat`：$\hat x$：
+对于多字符，`\widehat`：$\widehat {xy}$；
+类似的还有`\bar` , `\overline` , `\vec` , `\overrightarrow` , `\overleftrightarrow` , `\dot` , `\ddot`：$\bar x$ , $\overline {xyz}$ , $\vec a$ , $\overrightarrow a$ , $\overleftrightarrow {xy}$ , $\dot x$ , $\ddot x$。$$\frac d{dx}x\dot x =  \dot x^2 +  x\ddot x$$
+
+### 转义
+在MathJax里面有特殊意义的符号可以用`\`转义，比如用`\$`表示$，`\_`表示 $\_$ 。
+
+如果要使用`\`符号本身，由于`\\`表示的是换行，故而使用`\backslash`：$\backslash$。
+
+## 2. 表格
+
+使用`$$\begin{array}{列样式}...\end{array}$$`这样的形式来创建表格，列样式可以是clr表示居中，左，右对齐，还可以使用`|`表示一条竖线。表格中各行使用`\\`分隔，各列使用`&`分隔，使用`\hline`在本行前加入一条直线。例如：
+
+```
+$$\begin{array}{c|lcr} n & \text{Left} & \text{Center} & \text{Right} 
+\\ \hline 1 & 0.24 & 1 & 125 
+\\ 2 & -1 & 189 & -8 
+\\ 3 & -20 & 2000 & 1+10i 
+\\ \end{array}$$
+```
+
+$$\begin{array}{c|lcr} n & \text{Left} & \text{Center} & \text{Right} 
+\\ \hline 1 & 0.24 & 1 & 125 
+\\ 2 & -1 & 189 & -8  
+\\ 3 & -20 & 2000 & 1+10i 
+\\ \end{array}$$
+
+一个复杂的例子`$$\begin{array}{c}\begin{array}{cc}\begin{array}{c|cccc} \text{min} & 0 & 1 & 2 &3 \\ \hline 0 & 0 & 0 & 0 & 0 \\ 1 & 0 & 1 & 1 & 1 \\ 2 & 0 & 1 & 2 & 2 \\ 3 & 0 & 1 & 2 & 3  \end{array} & \begin{array}{c|cccc} \text{max} & 0 & 1 & 2 & 3 \\ \hline 0 & 0 & 1 & 2 & 3 \\ 1 & 1 & 1 & 2 & 3 \\ 2 & 2 & 2 & 2 & 3 \\ 3 & 3 & 3 & 3 & 3 \end{array} \end{array} \\ \begin{array}{c|cccc} \Delta & 0 & 1 & 2 & 3 \\ \hline 0 & 0 & 1 & 2 & 3 \\ 1 & 1 & 0 & 1 & 2 \\ 2 & 2 & 1 & 0 & 1 \\ 3 & 3 & 2 & 1 & 0 \end{array}\end{array}$$`
+
+$$\begin{array}{c}\begin{array}{cc}\begin{array}{c|cccc} \text{min} & 0 & 1 & 2 &3 \\ \hline 0 & 0 & 0 & 0 & 0 \\ 1 & 0 & 1 & 1 & 1 \\ 2 & 0 & 1 & 2 & 2 \\ 3 & 0 & 1 & 2 & 3  \end{array} & \begin{array}{c|cccc} \text{max} & 0 & 1 & 2 & 3 \\ \hline 0 & 0 & 1 & 2 & 3 \\ 1 & 1 & 1 & 2 & 3 \\ 2 & 2 & 2 & 2 & 3 \\ 3 & 3 & 3 & 3 & 3 \end{array} \end{array} \\ \begin{array}{c|cccc} \Delta & 0 & 1 & 2 & 3 \\ \hline 0 & 0 & 1 & 2 & 3 \\ 1 & 1 & 0 & 1 & 2 \\ 2 & 2 & 1 & 0 & 1 \\ 3 & 3 & 2 & 1 & 0 \end{array}\end{array}$$
+
+## 3. 矩阵
+
+### 基本用法
+使用`$$\begin{matrix}...\end{matrix}$$`来表示矩阵，在`\begin`与`\end`之间加入矩阵的元素即可。矩阵的行之间用`\\`分隔，列之间用`&`分隔。
+
+例如 `$$\begin{matrix} 1 & x & x^2 \\ 1 & y & y^2 \\ 1 & z & z^2 \end{matrix}$$` 结果：
+$$\begin{matrix} 1 & x & x^2 \\ 1 & y & y^2 \\ 1 & z & z^2 \end{matrix}$$
+
+### 加括号
+如果要对矩阵加括号，可以像上文中提到的那样，使用`\left`与`\right`配合表示括号符号。也可以使用特殊的matrix，即替换`\begin{matrix}...\end{matrix}`中的matrix为pmatrix , bmatrix , Bmatrix , vmatrix , Vmatrix.
+
+如 pmatrix: \begin{matrix}...\end{matrix} bmatrix: [1324] Bmatrix: {1324} vmatrix: ∣∣∣1324∣∣∣ Vmatrix: ∥∥∥1324∥∥∥
