@@ -176,4 +176,4 @@ $$\begin{matrix} 1 & x & x^2 \\ 1 & y & y^2 \\ 1 & z & z^2 \end{matrix}$$
 ### 加括号
 如果要对矩阵加括号，可以像上文中提到的那样，使用`\left`与`\right`配合表示括号符号。也可以使用特殊的matrix，即替换`\begin{matrix}...\end{matrix}`中的matrix为pmatrix , bmatrix , Bmatrix , vmatrix , Vmatrix.
 
-如 pmatrix: \begin{matrix}...\end{matrix} bmatrix: [1324] Bmatrix: {1324} vmatrix: ∣∣∣1324∣∣∣ Vmatrix: ∥∥∥1324∥∥∥
+如 pmatrix: $\begin{pmatrix} 1 & 2 \\ 3 & 4 \\ \end{pmatrix}$ bmatrix: $\begin{bmatrix} 1 & 2 \\ 3 & 4 \\ \end{bmatrix}$ Bmatrix: $\begin{Bmatrix} 1 & 2 \\ 3 & 4 \\ \end{Bmatrix}$ vmatrix: $\begin{vmatrix} 1 & 2 \\ 3 & 4 \\ \end{vmatrix}$ Vmatrix: $\begin{Vmatrix} 1 & 2 \\ 3 & 4 \\ \end{Vmatrix}$
