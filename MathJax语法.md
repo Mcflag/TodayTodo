@@ -177,3 +177,15 @@ $$\begin{matrix} 1 & x & x^2 \\ 1 & y & y^2 \\ 1 & z & z^2 \end{matrix}$$
 如果要对矩阵加括号，可以像上文中提到的那样，使用`\left`与`\right`配合表示括号符号。也可以使用特殊的matrix，即替换`\begin{matrix}...\end{matrix}`中的matrix为pmatrix , bmatrix , Bmatrix , vmatrix , Vmatrix.
 
 如 pmatrix: $\begin{pmatrix} 1 & 2 \\ 3 & 4 \\ \end{pmatrix}$ bmatrix: $\begin{bmatrix} 1 & 2 \\ 3 & 4 \\ \end{bmatrix}$ Bmatrix: $\begin{Bmatrix} 1 & 2 \\ 3 & 4 \\ \end{Bmatrix}$ vmatrix: $\begin{vmatrix} 1 & 2 \\ 3 & 4 \\ \end{vmatrix}$ Vmatrix: $\begin{Vmatrix} 1 & 2 \\ 3 & 4 \\ \end{Vmatrix}$
+
+### 省略元素
+
+可以使用`\cdots` $\cdots$ `\ddots` $\ddots$ `\vdots` $\vdots$ 来省略矩阵中的元素，如：
+
+$$\begin{pmatrix} 1 & a_1 & a_1^2 & \cdots & a_1^n \\ 1 & a_2 & a_2^2 & \cdots & a_2^n \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & a_m & a_m^2 & \cdots & a_m^n \end{pmatrix}$$
+
+### 增广矩阵
+
+增广矩阵需要使用前面的array来实现，如 `$$ \left[ \begin{array}{cc|c} 1 & 2 & 3 \\ 4 & 5 & 6 \end{array} \right] $$` 结果：
+
+$$ \left[ \begin{array}{cc|c} 1 & 2 & 3 \\ 4 & 5 & 6 \end{array} \right] $$
