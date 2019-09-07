@@ -189,3 +189,70 @@ $$\begin{pmatrix} 1 & a_1 & a_1^2 & \cdots & a_1^n \\ 1 & a_2 & a_2^2 & \cdots &
 增广矩阵需要使用前面的array来实现，如 `$$ \left[ \begin{array}{cc|c} 1 & 2 & 3 \\ 4 & 5 & 6 \end{array} \right] $$` 结果：
 
 $$ \left[ \begin{array}{cc|c} 1 & 2 & 3 \\ 4 & 5 & 6 \end{array} \right] $$
+
+## 对齐的公式
+
+有时候可能需要一系列的公式中等号对齐，这时候需要使用形如`\begin{align}...\end{align}`的格式，其中需要使用`&`来指示需要对齐的位置。如：
+$$\begin{align} \sqrt{37} & = \sqrt{\frac{73^2-1}{12^2}} \\ & = \sqrt{\frac{73^2}{12^2} \cdot \frac{73^2-1}{73^2}} \\ & = \frac{73}{12} \sqrt{1 - \frac{1}{73^2}} \\ & \approx \frac{73}{12} \left( 1 - \frac{1}{2 \cdot 73^2} \right) \end{align}$$
+
+使用`\begin{align}`时，在每个式子末尾加上`\nonumber`可以去掉显示式子的标号。
+$$\begin{align} \sqrt{37} & = \sqrt{\frac{73^2-1}{12^2}} \nonumber \\ & = \sqrt{\frac{73^2}{12^2} \cdot \frac{73^2-1}{73^2}} \nonumber \\ & = \frac{73}{12} \sqrt{1 - \frac{1}{73^2}} \nonumber \\ & \approx \frac{73}{12} \left( 1 - \frac{1}{2 \cdot 73^2} \right) \nonumber \end{align}$$
+
+## 分类表达式
+定义函数的时候经常需要分情况给出表达式，可使用`\begin{cases}...\end{cases}`。其中，使用\来分类，使用&指示需要对齐的位置。如：
+$$f(n) = \begin{cases} n/2, & \text{if $n$ is even} \\ 3n+1, & \text{if $n$ is odd} \end{cases}$$
+
+上述公式也可以移动到右侧，不过需要使用array来实现，如下：
+$$\left. \begin{array}{l} \text{if $n$ is even:} & n/2 \\ \text{if $n$ is odd:} & 3n+1 \end{array} \right\} = f(n)$$
+
+最后，如果需要让分类之间的垂直间隔变大，可以使用`\[2ex]`代替`\`来分隔不同情况。（3ex, 4ex也可以使用，1ex相当于原始距离）。
+
+## 空间问题
+在使用LaTex公式时，有一些不会影响公式正确性，但会使其看上去很糟糕的问题。
+
+### 不要在指数或者积分中使用`\frac`
+在指数或者基本表达式中使用`\frac`会使表达式看起来不清晰，因此在专业的数学排版中很少被使用。应该使用一个水平的`/`来代替，效果如下：
+$$\begin{array}{cc} \mathrm{Bad} & \mathrm{Better} \\ \hline \\ e^{i\frac{\pi}{2}} \quad e^{\frac{i\pi}{2}} & e^{i\pi/2} \\ \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \sin x \, dx & \int_{-\pi/2}^{\pi/2} \sin x \, dx \\ \end{array}$$
+
+### 使用`\mid`代替`|`作为分隔符
+符号`|`作为分隔符时有排版空间大小的问题，应该使用`\mid`代替，效果如下：
+$$\begin{array}{cc} \mathrm{Bad} & \mathrm{Better} \\ \hline \\ \{x | x^2 \in \Bbb Z\} & \{x \mid x^2 \in \Bbb Z \} \end{array}$$
+
+### 多重积分
+对于多重积分，不要使用`\int\int`此类的表达，应该使用`\iint \iiint`等特殊形式，效果如下：
+$$\begin{array}{cc} \mathrm{Bad} & \mathrm{Better} \\ \hline \\ \int\int_S f(x) \, dy \, dx & \iint_S f(x) \, dy \, dx \\ \int\int\int_V f(x) \, dz \, dy \, dx & \iiint_V f(x) \, dz \, dy \, dx \end{array}$$
+
+此外，在微分前应该使用`\`,来增加些许空间，否则微分会紧凑地排列在一起，如下：
+$$\begin{array}{cc} \mathrm{Bad} & \mathrm{Better} \\ \hline \\ \iiint_V f(x) dz dy dx & \iiint_V f(x) \, dz \, dy \, dx \end{array}$$
+
+### 连分数
+书写连分数表达式时，请使用`\cfrac`代替`\frac`或者`\over`，两者效果对比如下：
+$$x = a_0+\cfrac{1^2}{a_1+\cfrac{2^2}{a_2+\cfrac{3^2}{a_3+\cfrac{4^2}{a_4+\cdots}}}} \tag{\cfrac}$$
+
+$$x = a_0+\frac{1^2}{a_1+\frac{2^2}{a_2+\frac{3^2}{a_3+\frac{4^2}{a_4+\cdots}}}} \tag{\frac}$$
+
+### 方程组
+使用`\begin{array}...\end{array}`与`\left{...`与`\right.`配合表示方程组，如：
+$$\left\{ \begin{array}{c} a_1x+b_1y+c_1z=d_1 \\ a_2x+b_2y+c_2z=d_2 \\ a_3x+b_3y+c_3z=d3 \end{array} \right.$$
+
+同时，还可以使用`\begin{cases}...\end{cases}`表达同样的方程组，如：
+$$\begin{cases} a_1x+b_1y+c_1z=d_1 \\ a_2x+b_2y+c_2z=d_2 \\ a_3x+b_3y+c_3z=d_3 \end{cases}$$
+
+对齐方程组中的＝号，可以使用`\begin{aligned}...\end{aligned}`，如：
+$$\left\{ \begin{aligned} a_1x+b_1y+c_1z & = d_1+e_1 \\ a_2x+b_2y & = d_2 \\ a_3x+b_3y+c_3z & = d_3 \end{aligned} \right.$$
+
+### 颜色
+命名颜色是浏览器相关的，如果浏览器没有定义相关的颜色名称，则相关文本将被渲染为黑色。以下颜色是HTML4和CSS2标准中定义的一些颜色，其应该被大多数浏览器定义了。
+$$\begin{array}{|rc|} \hline \\ \verb+\color{black}{text}+ & \color{black}{text} \\ \verb+\color{gray}{text}+ & \color{gray}{text} \\ \verb+\color{silver}{text}+ & \color{silver}{text} \\ \verb+\color{white}{text}+ & \color{white}{text} \\ \hline \\ \verb+\color{maroon}{text}+ & \color{maroon}{text} \\ \verb+\color{red}{text}+ & \color{red}{text} \\ \verb+\color{yellow}{text}+ & \color{yellow}{text} \\ \verb+\color{lime}{text}+ & \color{lime}{text} \\ \verb+\color{olive}{text}+ & \color{olive}{text} \\ \verb+\color{green}{text}+ & \color{green}{text} \\ \verb+\color{teal}{text}+ & \color{teal}{text} \\ \verb+\color{aqua}{text}+ & \color{aqua}{text} \\ \verb+\color{blue}{text}+ & \color{blue}{text} \\ \verb+\color{navy}{text}+ & \color{navy}{text} \\ \verb+\color{purple}{text}+ & \color{purple}{text} \\ \verb+\color{fuchsia}{text}+ & \color{fuchsia}{text} \\ \verb+\color{magenta}{text}+ & \color{magenta}{text} \\ \hline \end{array}$$
+
+此外，HTML5和CSS3也定义了一些颜色名称。同时，颜色也可以使用`#rgb`的形式来表示，如下：
+$$\begin{array}{|rrrrrrrr|} \hline \verb+#000+ & \color{#000}{text} & & & \verb+#00F+ & \color{#00F}{text} & & \\ & & \verb+#0F0+ & \color{#0F0}{text} & & & \verb+#0FF+ & \color{#0FF}{text} \\ \verb+#F00+ & \color{#F00}{text} & & & \verb+#F0F+ & \color{#F0F}{text} & & \\ & & \verb+#FF0+ & \color{#FF0}{text} & & & \verb+#FFF+ & \color{#FFF}{text} & & \\ \hline \end{array}$$
+
+## 公式标记与引用
+使用`\tag{yourtat}`来标记公式，如果想在之后引用该公式，则还需要加上`\label{yourlabel}`在`\tag`之后，如：
+$$a:= x^2-y^3 \tag{*}\label{*}$$
+
+为了引用公式，可以使用`\eqref{rlabel}`，如：
+$$a+y^3 \stackrel{\eqref{*}}=x^2$$
+
+可以看到，通过超链接可以跳转到被引用公式的位置。
