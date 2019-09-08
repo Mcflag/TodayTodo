@@ -215,7 +215,9 @@ $$\left. \begin{array}{l} \text{if $n$ is even:} & n/2 \\ \text{if $n$ is odd:} 
 $$\begin{array}{cc} \mathrm{Bad} & \mathrm{Better} \\ \hline \\ e^{i\frac{\pi}{2}} \quad e^{\frac{i\pi}{2}} & e^{i\pi/2} \\ \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \sin x \, dx & \int_{-\pi/2}^{\pi/2} \sin x \, dx \\ \end{array}$$
 
 ### 使用`\mid`代替`|`作为分隔符
-符号`|`作为分隔符时有排版空间大小的问题，应该使用`\mid`代替，效果如下：
+符号`|`作为分隔符时有排版空间大小的问题，应该使用`\mid`代替，比如：
+`\begin{array}{cc} \mathrm{Bad} & \mathrm{Better} \\ \hline \\ \{x | x^2 \in \Bbb Z\} & \{x \mid x^2 \in \Bbb Z \} \end{array}`
+效果如下：
 $$\begin{array}{cc} \mathrm{Bad} & \mathrm{Better} \\ \hline \\ \{x | x^2 \in \Bbb Z\} & \{x \mid x^2 \in \Bbb Z \} \end{array}$$
 
 ### 多重积分
